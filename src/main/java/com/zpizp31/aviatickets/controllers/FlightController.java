@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -21,12 +22,14 @@ import java.util.List;
 @Controller
 public class FlightController {
 
-    private FlightService flightService;
-    private UserService userService;
-    private TicketService ticketService;
+    private final FlightService flightService;
+    private final UserService userService;
+    private final TicketService ticketService;
 
     private Flight flightDeparture;
     private Flight flightReturn;
+    private User user;
+    private List<Ticket> tickets;
 
     public FlightController(FlightService flightService, UserService userService, TicketService ticketService) {
         this.flightService = flightService;
@@ -36,7 +39,7 @@ public class FlightController {
 
     @GetMapping("/flight")
     public String flightPage() {
-        return "/flight";
+        return "/index";
     }
 
 
@@ -52,43 +55,46 @@ public class FlightController {
 
         model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
 
-        return "/flight.html";
+        return "/index";
     }
 
 
     // -------------------------- Confirmation ------------------------------------------
     @GetMapping("/confirmation")
-    public String confirmationPage() {
-        return "confirmation.html";
+    public String confirmationPage(Model model) {
+
+        model.addAllAttributes(ticketService.getTicketAttributes(user, tickets.get(0)));
+        model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
+
+        return "third_page";
     }
 
     @PostMapping("/confirmation")
     public String filledConfirmationPage(
             UserDataRequest userDataRequest,
             SelectedSeatsRequest selectedSeatsRequest,
-            CardRequest cardRequest,
             Model model
     ) {
         String firstName = userDataRequest.getFirstName();
         String lastName = userDataRequest.getLastName();
         String middleName = userDataRequest.getMiddleName();
         String gender = userDataRequest.getGender();
-        LocalDate dob = LocalDate.of(
+
+        LocalDate dob = userService.getDateOfBirth(
                 userDataRequest.getYear(),
                 userDataRequest.getMonth(),
                 userDataRequest.getDay()
         );
 
-        String seat = selectedSeatsRequest.getSelectedSeats();
+        String seat = selectedSeatsRequest.getSelectedSeats().trim();
 
-        User user = userService.findOrAddUser(firstName, middleName, lastName, gender, dob);
+        user = userService.findOrAddUser(firstName, middleName, lastName, gender, dob);
 
-        List<Ticket> tickets = ticketService.addTickets(user, flightDeparture, flightReturn, seat);
+        tickets = ticketService.addTickets(user, flightDeparture, flightReturn, seat);
 
-        model.addAllAttributes(ticketService.getTicketAttributes(user, tickets.get(0)));
-        model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
 
-        return "confirmation.html";
+
+        return "confirmation";
     }
 
 }

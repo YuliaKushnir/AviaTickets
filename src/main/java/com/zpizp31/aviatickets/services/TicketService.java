@@ -11,7 +11,7 @@ import java.util.*;
 @Service
 public class TicketService {
 
-    private TicketRepository ticketRepository;
+    private final TicketRepository ticketRepository;
 
     public TicketService(TicketRepository ticketRepository) {
         this.ticketRepository = ticketRepository;
@@ -42,6 +42,7 @@ public class TicketService {
         Map<String, String> attr = new HashMap<>();
 
         attr.put("fullName", user.getFirstName() + " " + user.getMiddleName() + " " + user.getLastName());
+        attr.put("firstName", user.getFirstName());
 
         attr.put("confirmationNumber", ticket.getConfirmation_id().toString());
         attr.put("seat", ticket.getSeat());

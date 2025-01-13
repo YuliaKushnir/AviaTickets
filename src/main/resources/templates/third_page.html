@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/third_page_style.css">
+  <script src="https://kit.fontawesome.com/593c193946.js" crossorigin="anonymous"></script>
+  <title>SKYLINK</title>
+  <meta name="description" content="Flights tickets">
+</head>
+<body>
+
+<!-- Перша секція -->
+
+<div class="main-section">
+  <div class="container main-section__nav-container">
+
+    <!-- Навігаційне меню -->
+
+    <header class="main-section__header">
+      <a href="#"><img class="main-section__logo" src="/img/Logo.png" alt=""></a>
+    </header>
+
+    <!-- Навігаційне меню -->
+
+    <nav class="main-section__nav nav-menu">
+      <button class="nav-menu__toggle"><img src="/img/Menu.svg" alt="menu icon"></button>
+      <ul class="nav-menu__list ">
+        <li class="nav-menu__list-item ">
+          <a href="#"><img class="main-section__support" src="/img/Support.svg" alt=""></a>
+          <a href="#" class="nav-menu__link text-inter400s16-black">Support</a></li>
+        <li class="nav-menu__list-item">
+          <a href="#"><img class="main-section__favorites" src="/img/Favourite.svg" alt=""></a>
+          <a href="favorites.html" class="nav-menu__link text-inter400s16-black">Favorites</a></li>
+        <li class="nav-menu__list-item">
+          <a href="#"><img class="main-section__flights" src="/img/Mytrips.svg" alt=""></a>
+          <a href="my-flights.html" class="nav-menu__link text-inter400s16-black">My flights</a></li>
+      </ul>
+    </nav>
+
+    <!-- Іконки справа в заголовку -->
+
+    <div class="header-icons">
+      <a href="#"><img class="main-section__icon-heart" src="/img/Heart.svg" alt=""></a>
+      <a href="#"><img class="main-section__icon-map" src="/img/iconMap.svg" alt=""></a>
+      <a href="#"><img class="main-section__ellipse" src="/img/Ellipse 1.svg" alt=""></a>
+    </div>
+  </div>
+
+  <!-- ==========Текстовий блок з з підтвердженням========== -->
+  <div class="container first-section__content-container">
+    <div class="first-wrapper">
+      <div class="first-wrapper__first-line text-inter-dark">
+        <p>Your flight has been booked successfully! Your confirmation number is <span th:text="${confirmationNumber}"></span></p>
+      </div>
+      <div class="first-wrapper__second-line">
+        <p>Bon voyage, </p>
+        <p class="first-wrapper__name-variable"><span th:text="${firstName}"></span></p>
+        <p>!</p>
+      </div>
+      <div class="first-wrapper__third-line">
+        <p>Confirmation number: <span th:text="${confirmationNumber}"></span></p>
+      </div>
+      <div class="first-wrapper__forth-line">
+        <p>Thank you for booking your travel with Skylink! Below is a summary of your trip. We’ve sent a copy of your booking confirmation to your email address. </p>
+      </div>
+      <div class="first-wrapper__flight-summary">
+        <p>Flight summary</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container main-section__content-container">
+
+    <!-- ==========Лівий блок з інформацією по рейсам========== -->
+
+    <div class="left-wrapper">
+      <div class="left-wrapper__flight-table">
+
+        <!-- 1 рядок таблиці - куди летимо -->
+
+        <div class="left-wrapper__destination">
+          <div class="left-wrapper__destination-subframe">
+            <div class="left-wrapper__destination-subframe_text">
+              <p>Your trip to <span th:text="${destinationCity}"></span></p>
+            </div>
+            <div class="left-wrapper__destination-subframe_dep-city-var"></div>
+            <div class="left-wrapper__destination-subframe_after-city-text"><p>-</p></div>
+            <div class="left-wrapper__destination-subframe_destination-veriable">
+            </div>
+          </div>
+          <button class="left-wrapper__button left-wrapper__button_blue">
+            Download<img src="/img/file_download.svg" alt="download icon">
+          </button>
+        </div>
+
+        <!-- Рядок по вильоту: рейс та дата вильоту -->
+
+        <div class="left-wrapper__departure-line">
+          <div class="left-wrapper__departure-text text-inter-dark">
+            <p>Departure</p>
+          </div>
+          <div class="left-wrapper__departure-flight-veriable text-inter-grey-SkylinkH3"><span th:text="${departFlightNumber}"></span></div>
+          <div class="left-wrapper__departure-date-variable first-date text-inter-grey-SkylinkH3"><span th:text="${departDate}"></span></div>
+
+        </div>
+
+        <!-- Рядок: час та місто вильоту -->
+
+        <div class="left-wrapper__departure-time">
+          <div class="left-wrapper__departure-time-left">
+            <div class="left-wrapper__departure-time-veriable text-montserrat-dark-SkylinkH2"><span th:text="${departTime}"></span></div>
+            <div class="left-wrapper__departure-city-veriable text-montserrat-dark-SkylinkH2"><span th:text="${departIATA}"></span></div>
+          </div>
+          <div class="left-wrapper__departure-arrow-section">
+            <img src="/img/Arrow 1.svg" alt="flight direction">
+            <div class="left-wrapper__departure-flight-duration-variable text-inter-blue-Skylink"><span th:text="${departDuration}"></span></div>
+          </div>
+          <div class="left-wrapper__arrival-time-right">
+            <div class="left-wrapper__arrival-time-veriable text-montserrat-dark-SkylinkH2"><span th:text="${departArrivalTime}"></span></div>
+            <div class="left-wrapper__arrival-city-veriable text-montserrat-dark-SkylinkH2"><span th:text="${departDestinationIATA}"></span></div>
+          </div>
+        </div>
+
+        <!-- Рядок: дата та місто вильоту -->
+
+        <div class="left-wrapper__departure-date">
+          <div class="left-wrapper__departure-left">
+            <div class="left-wrapper__departure-date-variable second-date text-inter-grey-Skylink"><span th:text="${departDate}"></span></div>
+            <div class="left-wrapper__departure-place-variable departure-place-first text-inter-grey-Skylink"><span th:text="${placeA}"></span></div>
+          </div>
+          <div class="left-wrapper__departure-right">
+            <div class="left-wrapper__arrival-date-variable text-inter-grey-Skylink"><span th:text="${departDate}"></span></div>
+            <div class="left-wrapper__arrival-place-variable text-inter-grey-Skylink"><span th:text="${placeB}"></span></div>
+          </div>
+        </div>
+
+        <!-- Блок інформації по зворотньому рейсу -->
+
+        <div class="left-wrapper__return-line">
+          <div class="left-wrapper__return-text text-inter-dark">
+            <p>Return</p>
+          </div>
+          <div class="left-wrapper__return-flight-veriable text-inter-grey-SkylinkH3"><span th:text="${flightNumberReturn}"></span></div>
+          <div class="left-wrapper__return-date-variable return-date-first text-inter-grey-SkylinkH3"><span th:text="${returnDate}"></span></div>
+        </div>
+
+        <!-- Рядок  по зворотньому рейсу: час та місто вильоту -->
+
+        <div class="left-wrapper__return-time">
+          <div class="left-wrapper__return-time-left">
+            <div class="left-wrapper__return-time-veriable text-montserrat-dark-SkylinkH2"><span th:text="${returnTime}"></span></div>
+            <div class="left-wrapper__return-city-veriable text-montserrat-dark-SkylinkH2"><span th:text="${departDestinationIATA}"></span></div>
+          </div>
+          <div class="left-wrapper__return-arrow-section">
+            <img src="/img/Arrow 1.svg" alt="flight direction">
+            <div class="left-wrapper__return-flight-duration-variable text-inter-blue-Skylink"><span th:text="${returnDuration}"></span></div>
+          </div>
+          <div class="left-wrapper__return-arrival-time-right">
+            <div class="left-wrapper__return-arrival-time-veriable text-montserrat-dark-SkylinkH2"><span th:text="${returnArrivalTime}"></span></div>
+            <div class="left-wrapper__return-arrival-city-veriable text-montserrat-dark-SkylinkH2"><span th:text="${departIATA}"></span></div>
+          </div>
+        </div>
+
+        <!-- Рядок  по зворотньому рейсу: дата та місто вильоту -->
+
+        <div class="left-wrapper__return-date">
+          <div class="left-wrapper__return-left">
+            <div class="left-wrapper__return-date-variable return-date-second text-inter-grey-Skylink"><span th:text="${returnDate}"></span></div>
+            <div class="left-wrapper__return-place-variable text-inter-grey-Skylink"><span th:text="${placeB}"></span></div>
+          </div>
+          <div class="left-wrapper__return-right">
+            <div class="left-wrapper__return-arrival-date-variable text-inter-grey-Skylink"><span th:text="${returnDate}"></span></div>
+            <div class="left-wrapper__return-arrival-place-variable text-inter-grey-Skylink"><span th:text="${placeA}"></span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==========Правий блок з інформацією по цінам========== -->
+
+    <div class="right-wrapper">
+      <div class="right-wrapper__price-table">
+        <div class="right-wrapper__subtable">
+
+          <!-- Price summary -->
+
+          <p class="text-inter-dark price-summary">Price summary</p>
+          <div class="right-wrapper__traveler text-inter-dark-Skylink19">
+            <div class="right-wrapper__traveler-left-part">
+              <p class="right-wrapper__traveler-text">Traveler:
+              </p>
+              <div class="right-wrapper__treveler-number-veriable"></div>
+              <div class="right-wrapper__treveler-adult-veriable">
+              </div>
+            </div>
+            <div class="right-wrapper__treveler-price-variable"><span th:text="${total}"></span></div>
+          </div>
+          <div class="right-wrapper__flight text-inter-dark-Skylink19">
+            <p class="right-wrapper__flight-text">Flight
+            </p>
+            <div class="right-wrapper__flight-price-variable"><span th:text="${cost}"></span></div>
+          </div>
+          <div class="right-wrapper__taxes text-inter-dark-Skylink19">
+            <p class="right-wrapper__taxes-text">Taxes and fees</p>
+            <div class="right-wrapper__taxes-price-variable"><span th:text="${taxes}"></span></div>
+          </div>
+
+          <!-- Check-in baggage -->
+
+          <div class="right-wrapper__baggage text-inter-dark-Skylink19w500">
+            <p>Check-in baggage</p>
+          </div>
+          <div class="right-wrapper__departure text-inter-dark-Skylink19">
+            <p>Departure</p>
+            <div class="right-wrapper__departure-bags">
+              <div class="right-wrapper__departure-bags-variable"></div>
+              <p>x bags</p>
+            </div>
+          </div>
+          <div class="right-wrapper__return text-inter-dark-Skylink19">
+            <p>Return</p>
+            <div class="right-wrapper__return-bags">
+              <div class="right-wrapper__return-bags-variable"></div>
+              <p>x bags</p>
+            </div>
+          </div>
+
+          <!-- Add ones -->
+
+          <div class="right-wrapper__add text-inter-dark-Skylink19w500">
+            <p>Add ones</p>
+          </div>
+          <div class="right-wrapper__choice text-inter-dark-Skylink19">
+            <p class="right-wrapper__choice-text">Total seat choice</p>
+            <div class="right-wrapper__choice-price-variable"></div>
+          </div>
+
+          <!-- Flight total -->
+
+          <div class="right-wrapper__total text-inter-dark">
+            <p class="right-wrapper__total-text">Flight total</p>
+            <div class="right-wrapper__total-price-variable"><span th:text="${flightTotal}"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========Footer ========== -->
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer-wrapper">
+
+        <!-- 1 Стовпчик -->
+
+        <div class="footer-wrapper__1column">
+          <a href="#"><img src="/img/Logo.png" alt="logo"></a>
+          <div class="contacts text-inter-grey-Skylink">
+            <p>123 Maple Avenue, Suite</p>
+            <p>400, San Francisco, CA</p>
+            <div class="mail">
+              <a class="text-inter-grey-Skylink mail" href="mailto:sklink@gmail.com">sklink@gmail.com</a>
+            </div>
+          </div>
+          <a class="legal-doc text-inter-grey-Skylink" href="#">Legal documents</a>
+        </div>
+
+        <!-- 2 Стовпчик -->
+
+        <div class="footer-wrapper__2column">
+          <div class="policy">
+            <a class="text-inter-dark-Skylink19" href="#">Shipping Policy</a>
+            <a class="text-inter-dark-Skylink19" href="#">Support</a>
+            <a class="text-inter-dark-Skylink19" href="#">FAQs</a>
+            <a class="text-inter-dark-Skylink19" href="#">Warranty Terms</a>
+          </div>
+          <div class="privacy text-inter-grey-Skylink">
+            <a class="text-inter-grey-Skylink" href="">Privacy Policy</a>
+          </div>
+        </div>
+
+        <!-- 3 Стовпчик -->
+
+        <div class="footer-wrapper__3column">
+          <div class="terms">
+            <a class="text-inter-dark-Skylink19" href="#">Return Policy</a>
+            <a class="text-inter-dark-Skylink19" href="#">Terms and Conditions of Sale</a>
+            <a class="text-inter-dark-Skylink19" href="#">Terms os Use</a>
+            <a class="text-inter-dark-Skylink19" href="#">Contact us</a>
+          </div>
+          <div class="notification text-inter-grey-Skylink">
+            <a class="text-inter-grey-Skylink" href="">Push Notification Policy</a>
+          </div>
+        </div>
+
+        <!-- 4 Стовпчик з іконками -->
+
+        <div class="footer-wrapper__4column">
+          <div class="icons">
+            <div class="icons-row">
+              <a href="#" target="" rel="referrer">
+                <img src="/img/iMessage.svg" alt="Facebook Icon">
+              </a>
+              <a href="#" target="" rel="referrer">
+                <img src="/img/YouTube.svg" alt="YouTube Icon">
+              </a>
+              <a href="#" target="" rel="referrer">
+                <img src="/img/Vector.svg" alt="Telegram Icon">
+              </a>
+            </div>
+
+          </div>
+          <div class="LLC text-inter-grey-Skylink">
+            <p>© LLC «Skylink»</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+
+    // ==========Змінні для блока first-wrapper==========
+
+    // Оголошення змінної passengerNameVariable
+    // var passengerNameVariable = "Sophia";
+    // document.querySelector('.first-wrapper__name-variable').textContent = passengerNameVariable;
+
+
+    // ==========Змінні для блока left-wrapper==========
+
+    //+++Змінні по блоку вильоту+++
+
+    // // Оголошення змінної depCityVar для медіа-запиту max-width: 360px
+    // var depCityVar = "Lisbon";
+    // document.querySelector('.left-wrapper__destination-subframe_dep-city-var').textContent = depCityVar;
+    //
+    // // Оголошення змінної destinationCityVariable
+    // var destinationCityVariable = "Rome";
+    // document.querySelector('.left-wrapper__destination-subframe_destination-veriable').textContent = destinationCityVariable;
+    //
+    // // Оголошення змінної departureFlightVeriable
+    // var departureFlightVeriable = "TAP Portugal TP832";
+    // document.querySelector('.left-wrapper__departure-flight-veriable').textContent = departureFlightVeriable;
+    //
+    // // Оголошення змінної departureDateVariable
+    // var departureDateVariable = "Tue, 05 Nov";
+    // document.querySelector('.first-date').textContent = departureDateVariable;
+    //
+    // // Оголошення змінної departurTimeVeriable
+    // var departurTimeVeriable = "7:20 am";
+    // document.querySelector('.left-wrapper__departure-time-veriable').textContent = departurTimeVeriable;
+    //
+    // // Оголошення змінної departureCityVeriable
+    // var departureCityVeriable = "LIS";
+    // document.querySelector('.left-wrapper__departure-city-veriable').textContent = departureCityVeriable;
+    //
+    // // Оголошення змінної departureFlightDurationVariable
+    // var departureFlightDurationVariable = "3h 50min";
+    // document.querySelector('.left-wrapper__departure-flight-duration-variable').textContent = departureFlightDurationVariable;
+    //
+    // // Оголошення змінної arrivalTimeVeriable
+    // var arrivalTimeVeriable = "11:25 am";
+    // document.querySelector('.left-wrapper__arrival-time-veriable').textContent = arrivalTimeVeriable;
+    //
+    // // Оголошення змінної arrivalCityVeriable
+    // var arrivalCityVeriable = "FCO";
+    // document.querySelector('.left-wrapper__arrival-city-veriable').textContent = arrivalCityVeriable;
+    //
+    // // Використовуємо змінну departureDateVariable вдруге
+    // document.querySelector('.second-date').textContent = departureDateVariable;
+    //
+    // // Оголошення змінної departurePlaceVariable
+    // var departurePlaceVariable = "Lisboa, T1, Lisbon (Portugal)";
+    // document.querySelector('.departure-place-first').textContent = departurePlaceVariable;
+    //
+    // // Оголошення змінної arrivalDateVeriable
+    // var arrivalDateVeriable = "Tue, 05 Nov";
+    // document.querySelector('.left-wrapper__arrival-date-variable').textContent = arrivalDateVeriable;
+    //
+    // // Оголошення змінної arrivalPlaceVeriable
+    // var arrivalPlaceVeriable = "Fumicino, T1, Rome (Italy)";
+    // document.querySelector('.left-wrapper__arrival-place-variable').textContent = arrivalPlaceVeriable;
+
+    //+++Змінні по блоку зворотнього рейсу+++
+
+    // // Оголошення змінної returnFlightVeriable
+    // var returnFlightVeriable = "TAP Portugal TP837";
+    // document.querySelector('.left-wrapper__return-flight-veriable').textContent = returnFlightVeriable;
+    //
+    // // Оголошення змінної returnDateVariable
+    // var returnDateVariable = "Fri, 08 Nov";
+    // document.querySelector('.return-date-first').textContent = returnDateVariable;
+    //
+    // // Оголошення змінної returnTimeVeriable
+    // var returnTimeVeriable = "7:35 am";
+    // document.querySelector('.left-wrapper__return-time-veriable').textContent = returnTimeVeriable;
+    //
+    // // Оголошення змінної returnCityVeriable
+    // var returnCityVeriable = "FCO";
+    // document.querySelector('.left-wrapper__return-city-veriable').textContent = returnCityVeriable;
+    //
+    // // Оголошення змінної returnFlightDurationVariable
+    // var returnFlightDurationVariable = "3h 10min";
+    // document.querySelector('.left-wrapper__return-flight-duration-variable').textContent = returnFlightDurationVariable;
+    //
+    // // Оголошення змінної returnArrivalTimeVeriable
+    // var returnArrivalTimeVeriable = "9:45 am";
+    // document.querySelector('.left-wrapper__return-arrival-time-veriable').textContent = returnArrivalTimeVeriable;
+    //
+    // // Оголошення змінної returnArrivalCityVeriable
+    // var returnArrivalCityVeriable = "LIS";
+    // document.querySelector('.left-wrapper__return-arrival-city-veriable').textContent = returnArrivalCityVeriable;
+    //
+    // // Використовуємо змінну returnDateVariable вдруге
+    // document.querySelector('.return-date-second').textContent = returnDateVariable;
+    //
+    // // Оголошення змінної returnPlaceVariable
+    // var returnPlaceVariable = "Fumicino, T1, Rome (Italy)";
+    // document.querySelector('.left-wrapper__return-place-variable').textContent = returnPlaceVariable;
+    //
+    // // Оголошення змінної returnArrivalDateVeriable
+    // var returnArrivalDateVeriable = "Fri, 08 Nov";
+    // document.querySelector('.left-wrapper__return-arrival-date-variable').textContent = returnArrivalDateVeriable;
+    //
+    // // Оголошення змінної returnArrivalPlaceVeriable
+    // var returnArrivalPlaceVeriable = "Lisboa, T1, Lisbon (Portugal)";
+    // document.querySelector('.left-wrapper__return-arrival-place-variable').textContent = returnArrivalPlaceVeriable;
+    //
+
+    // ==========Змінні для блока right-wrapper==========
+
+    // Оголошення змінної trevelerNumberVeriable
+    var trevelerNumberVeriable = "1";
+    document.querySelector('.right-wrapper__treveler-number-veriable').textContent = trevelerNumberVeriable;
+
+    // Оголошення змінної trevelerAdultVeriable
+    var trevelerAdultVeriable = "Adult";
+    document.querySelector('.right-wrapper__treveler-adult-veriable').textContent = trevelerAdultVeriable;
+
+    // Оголошення змінної trevelerPriceVeriable
+    // var trevelerPriceVeriable = "$58.48";
+    // document.querySelector('.right-wrapper__treveler-price-variable').textContent = trevelerPriceVeriable;
+
+    // Оголошення змінної flightPriceVeriable
+    // var flightPriceVeriable = "$40.35";
+    // document.querySelector('.right-wrapper__flight-price-variable').textContent = flightPriceVeriable;
+
+    // Оголошення змінної taxesPriceVeriable
+    // var taxesPriceVeriable = "$18.13";
+    // document.querySelector('.right-wrapper__taxes-price-variable').textContent = taxesPriceVeriable;
+
+    // Оголошення змінної departureBagsVeriable
+    var departureBagsVeriable = "1";
+    document.querySelector('.right-wrapper__departure-bags-variable').textContent = departureBagsVeriable;
+
+    // Оголошення змінної returnBagsVeriable
+    var returnBagsVeriable = "1";
+    document.querySelector('.right-wrapper__return-bags-variable').textContent = returnBagsVeriable;
+
+    // Оголошення змінної choicePriceVeriable
+    var choicePriceVeriable = "$0";
+    document.querySelector('.right-wrapper__choice-price-variable').textContent = choicePriceVeriable;
+
+    // Оголошення змінної totalPriceVeriable
+    // var totalPriceVeriable = "$116.95";
+    // document.querySelector('.right-wrapper__total-price-variable').textContent = totalPriceVeriable;
+
+
+    // ==========Дії для медіа-запиту max-width: 360px==========
+    // Показуємо/ховаємо меню для малих екранів
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.querySelector('.nav-menu__toggle');
+      const menuList = document.querySelector('.nav-menu__list');
+
+      if (toggleButton && menuList) {
+        toggleButton.addEventListener('click', function (event) {
+          event.stopPropagation(); // Зупиняє поширення події, щоб клік по кнопці не закривав меню
+          menuList.classList.toggle('show'); // Показуємо/ховаємо меню
+        });
+
+        // Закрити меню при кліку поза ним
+        document.addEventListener('click', function (event) {
+          if (!menuList.contains(event.target) && !toggleButton.contains(event.target)) {
+            menuList.classList.remove('show'); // Ховаємо меню, якщо клік поза меню
+          }
+        });
+      }
+    });
+
+  </script>
+</body>
+</html>

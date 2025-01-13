@@ -12,8 +12,8 @@ import java.util.*;
 @Service
 public class FlightService {
 
-    private FlightRepository flightRepository;
-    private ScheduleService scheduleService;
+    private final FlightRepository flightRepository;
+    private final ScheduleService scheduleService;
 
     public FlightService(FlightRepository flightRepository, ScheduleService scheduleService) {
         this.flightRepository = flightRepository;
@@ -62,6 +62,7 @@ public class FlightService {
         Map<String, String> attr = new HashMap<>();
 
         attr.put("destinationCity", dest);
+        attr.put("departCity", from);
 
         attr.put("departFlightNumber", departureFlight.getFlightNumber());
         attr.put("departDate", departureFlight.getDepartDate().format(dateFormatter));
@@ -86,13 +87,14 @@ public class FlightService {
         attr.put("flightNumberReturn", returnFlight.getFlightNumber());
         attr.put("returnDate", returnFlight.getDepartDate().format(dateFormatter));
 
-        attr.put("returnTime", departureFlight.getDepartTime().format(timeFormatter));
-        attr.put("returnDuration", String.format("%dh %dmin", departureFlight.getDuration().getHour(), departureFlight.getDuration().getMinute()));
-        attr.put("returnArrivalTime", departureFlight.getDepartTime().plusMinutes(departureFlight.getDuration().getHour() * 60 + departureFlight.getDuration().getMinute()).format(timeFormatter));
+        attr.put("returnTime", returnFlight.getDepartTime().format(timeFormatter));
+        attr.put("returnDuration", String.format("%dh %dmin", returnFlight.getDuration().getHour(), returnFlight.getDuration().getMinute()));
+        attr.put("returnArrivalTime", returnFlight.getDepartTime().plusMinutes(returnFlight.getDuration().getHour() * 60 + returnFlight.getDuration().getMinute()).format(timeFormatter));
 
         attr.put("cost", String.valueOf(departureFlight.getCost()));
         attr.put("taxes", String.valueOf(departureFlight.getTaxes()));
         attr.put("total", String.valueOf(departureFlight.getCost() + departureFlight.getTaxes()));
+        attr.put("flightTotal", String.valueOf((departureFlight.getCost() + departureFlight.getTaxes()) * 2));
 
         return attr;
     }

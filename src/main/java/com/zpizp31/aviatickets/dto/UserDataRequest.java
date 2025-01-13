@@ -2,13 +2,13 @@ package com.zpizp31.aviatickets.dto;
 
 public class UserDataRequest {
 
-        private String firstName;
+    private String firstName;
     private String middleName;
     private String lastName;
     private String gender;
-    private int month;
-    private int day;
-    private int year;
+    private String month;
+    private String day;
+    private String year;
 
 
     public String getFirstName() {
@@ -43,27 +43,27 @@ public class UserDataRequest {
         this.gender = gender;
     }
 
-    public int getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(int month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 
-    public int getDay() {
+    public String getDay() {
         return day;
     }
 
-    public void setDay(int day) {
+    public void setDay(String day) {
         this.day = day;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 }
