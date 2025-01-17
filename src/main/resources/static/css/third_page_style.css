@@ -73,7 +73,7 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -628,7 +628,7 @@ legend {
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   color: black;
   letter-spacing: -0.1800000072px;
 }
@@ -662,7 +662,7 @@ legend {
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   color: rgba(0, 0, 0, 0.3764705882);
 }
 
@@ -674,7 +674,7 @@ legend {
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   color: #000000;
 }
 
@@ -751,7 +751,7 @@ legend {
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   color: #0446EF;
 }
 
@@ -763,7 +763,7 @@ legend {
   text-align: left;
   text-underline-position: from-font;
   -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
   color: rgba(0, 0, 0, 0.3764705882);
 }
 
@@ -1024,6 +1024,42 @@ legend {
   margin-top: 145px;
 }
 
+@media (max-width: 1450px) {
+  .container {
+    width: 95%;
+  }
+  .left-wrapper__destination-subframe {
+    font-size: 65px;
+  }
+  .left-wrapper__flight-table {
+    margin: 60px 52px 69px 52px;
+  }
+  .left-wrapper__button {
+    font-size: 18px;
+  }
+  .left-wrapper__return-flight-veriable {
+    margin-left: 55px;
+    margin-right: 35px;
+  }
+  .text-montserrat-dark-SkylinkH2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 1310px) {
+  .left-wrapper__destination-subframe {
+    font-size: 60px;
+  }
+  .left-wrapper__return-flight-veriable {
+    margin-left: 55px;
+    margin-right: 35px;
+  }
+  .text-montserrat-dark-SkylinkH2 {
+    font-size: 33px;
+  }
+  .text-inter-grey-SkylinkH3 {
+    font-size: 29px;
+  }
+}
 @media (max-width: 1199px) {
   .container {
     max-width: 964px;
@@ -1039,7 +1075,7 @@ legend {
     font-size: 19px;
   }
   .first-wrapper__second-line {
-    font-size: 49px;
+    font-size: 48px;
   }
   .first-wrapper__third-line {
     font-size: 22px;
@@ -1199,15 +1235,16 @@ legend {
     margin-left: 100px;
   }
   .right-wrapper {
-    max-width: 256px;
+    max-width: 206px;
   }
   .right-wrapper__price-table {
-    max-width: 256px;
+    max-width: 210px;
     border: none;
     margin-top: 180px;
+    margin-left: 5px;
   }
   .right-wrapper__subtable {
-    max-width: 256px;
+    max-width: 210px;
     margin: 0px;
   }
   .right-wrapper__subtable p {
@@ -1271,7 +1308,7 @@ legend {
     font-size: 26px;
   }
   .text-montserrat-dark-SkylinkH2 {
-    font-size: 33px;
+    font-size: 27px;
   }
   .text-inter33_400-blue {
     font-size: 28px;
@@ -1357,6 +1394,7 @@ legend {
   }
   .right-wrapper__price-table {
     margin-top: 20px;
+    margin-left: 0px;
     max-width: 540px;
     min-height: 453px;
   }
