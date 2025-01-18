@@ -39,7 +39,7 @@ public class FlightController {
 
     @GetMapping("/flight")
     public String flightPage() {
-        return "/index.html";
+        return "/index";
     }
 
 
@@ -55,7 +55,7 @@ public class FlightController {
 
         model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
 
-        return "/index.html";
+        return "/index";
     }
 
 
@@ -66,7 +66,7 @@ public class FlightController {
         model.addAllAttributes(ticketService.getTicketAttributes(user, tickets.get(0)));
         model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
 
-        return "third_page.html";
+        return "third_page";
     }
 
     @PostMapping("/confirmation")
@@ -94,7 +94,7 @@ public class FlightController {
 
 
 
-        return "confirmation.html";
+        return "confirmation";
     }
 
 }
