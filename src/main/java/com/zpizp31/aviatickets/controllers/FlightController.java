@@ -39,7 +39,7 @@ public class FlightController {
 
     @GetMapping("/flight")
     public String flightPage() {
-        return "/index";
+        return "index";
     }
 
 
@@ -58,7 +58,7 @@ public class FlightController {
         model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
 
 
-        return "/index";
+        return "index";
     }
 
 
