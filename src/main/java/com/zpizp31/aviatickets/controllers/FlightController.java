@@ -39,28 +39,26 @@ public class FlightController {
 
     @GetMapping("/flight")
     public String flightPage() {
-        return "/index";
+        return "/flight";
     }
 
 
     @PostMapping("/flight")
     public String findTicket(
-//            FindTicketRequest findTicketRequest,
+            FindTicketRequest findTicketRequest,
             Model model) {
-//        String cityFrom = findTicketRequest.getFromCity();
-//        String cityTo = findTicketRequest.getDestinationCity();
-//        LocalDate departDate = findTicketRequest.getDepartDate();
-//        LocalDate returnDate = findTicketRequest.getReturnDate();
+        String cityFrom = findTicketRequest.getFromCity();
+        String cityTo = findTicketRequest.getDestinationCity();
+        LocalDate departDate = findTicketRequest.getDepartDate();
+        LocalDate returnDate = findTicketRequest.getReturnDate();
 
-//        flightDeparture = flightService.findFlightByCityNameAndDate(cityFrom, cityTo, departDate).get(0);
-//        flightReturn = flightService.findFlightByCityNameAndDate(cityTo, cityFrom, returnDate).get(0);
-//
-//        model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
+        flightDeparture = flightService.findFlightByCityNameAndDate(cityFrom, cityTo, departDate).get(0);
+        flightReturn = flightService.findFlightByCityNameAndDate(cityTo, cityFrom, returnDate).get(0);
 
-        String cityTo = "Rome";
-        model.addAttribute("destinationCity", cityTo);
+        model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
 
-        return "/index";
+
+        return "/flight";
     }
 
 
@@ -71,7 +69,7 @@ public class FlightController {
         model.addAllAttributes(ticketService.getTicketAttributes(user, tickets.get(0)));
         model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
 
-        return "third_page";
+        return "confirmation";
     }
 
     @PostMapping("/confirmation")
