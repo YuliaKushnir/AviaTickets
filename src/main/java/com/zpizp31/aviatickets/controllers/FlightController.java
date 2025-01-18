@@ -44,16 +44,21 @@ public class FlightController {
 
 
     @PostMapping("/flight")
-    public String findTicket(FindTicketRequest findTicketRequest, Model model) {
-        String cityFrom = findTicketRequest.getFromCity();
-        String cityTo = findTicketRequest.getDestinationCity();
-        LocalDate departDate = findTicketRequest.getDepartDate();
-        LocalDate returnDate = findTicketRequest.getReturnDate();
+    public String findTicket(
+//            FindTicketRequest findTicketRequest,
+            Model model) {
+//        String cityFrom = findTicketRequest.getFromCity();
+//        String cityTo = findTicketRequest.getDestinationCity();
+//        LocalDate departDate = findTicketRequest.getDepartDate();
+//        LocalDate returnDate = findTicketRequest.getReturnDate();
 
-        flightDeparture = flightService.findFlightByCityNameAndDate(cityFrom, cityTo, departDate).get(0);
-        flightReturn = flightService.findFlightByCityNameAndDate(cityTo, cityFrom, returnDate).get(0);
+//        flightDeparture = flightService.findFlightByCityNameAndDate(cityFrom, cityTo, departDate).get(0);
+//        flightReturn = flightService.findFlightByCityNameAndDate(cityTo, cityFrom, returnDate).get(0);
+//
+//        model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
 
-        model.addAllAttributes(flightService.getFlightAttributes(flightDeparture, flightReturn));
+        String cityTo = "Rome";
+        model.addAttribute("destinationCity", cityTo);
 
         return "/index";
     }
