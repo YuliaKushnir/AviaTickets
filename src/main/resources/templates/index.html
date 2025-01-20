@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://kit.fontawesome.com/593c193946.js" crossorigin="anonymous"></script>
     <title>SKYLINK</title>
-    <meta name="description" content="Flights tickets">
+    <meta name="description" content="Авіаквитки">
 <!--    <script src="/js/flight.js" defer></script>-->
 </head>
 <body>
@@ -29,13 +29,13 @@
             <ul class="nav-menu__list ">
                 <li class="nav-menu__list-item ">
                     <a href="#"><img class="main-section__support" src="/img/Support.svg" alt=""></a>
-                    <a href="#" class="nav-menu__link text-inter400s16-black">Support</a></li>
+                    <a href="#" class="nav-menu__link text-inter400s16-black">Підтримка</a></li>
                 <li class="nav-menu__list-item">
                     <a href="#"><img class="main-section__favorites" src="/img/Favourite.svg" alt=""></a>
-                    <a href="favorites.html" class="nav-menu__link text-inter400s16-black">Favorites</a></li>
+                    <a href="favorites.html" class="nav-menu__link text-inter400s16-black">Обране</a></li>
                 <li class="nav-menu__list-item">
                     <a href="#"><img class="main-section__flights" src="/img/Mytrips.svg" alt=""></a>
-                    <a href="my-flights.html" class="nav-menu__link text-inter400s16-black">My flights</a></li>
+                    <a href="my-flights.html" class="nav-menu__link text-inter400s16-black">Мої рейси</a></li>
             </ul>
         </nav>
 
@@ -59,7 +59,7 @@
                 <div class="left-wrapper__destination">
                     <div class="left-wrapper__destination-subframe">
                         <div class="left-wrapper__destination-subframe_text">
-                            <p>Your trip to <span th:text="${destinationCity}"></span></p>
+                            <p>Ваш рейс до <span th:text="${destinationCity}"></span></p>
                         </div>
                         <div class="left-wrapper__destination-subframe_dep-city-var"></div>
                         <div class="left-wrapper__destination-subframe_after-city-text"><p>-</p></div>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <button class="left-wrapper__button left-wrapper__button_blue">
-                        Change flights
+                        Змінити рейс
                     </button>
                 </div>
 
@@ -75,7 +75,7 @@
 
                 <div class="left-wrapper__departure-line">
                     <div class="left-wrapper__departure-text text-inter-dark">
-                        <p>Departure</p>
+                        <p>Виліт</p>
                     </div>
                     <div class="left-wrapper__departure-flight-veriable text-inter-grey-SkylinkH3"><span th:text="${departFlightNumber}"></span></div>
                     <div class="left-wrapper__departure-date-variable first-date text-inter-grey-SkylinkH3"><span th:text="${departDate}"></span></div>
@@ -116,7 +116,7 @@
 
                 <div class="left-wrapper__return-line">
                     <div class="left-wrapper__return-text text-inter-dark">
-                        <p>Return</p>
+                        <p>Повернення</p>
                     </div>
                     <div class="left-wrapper__return-flight-veriable text-inter-grey-SkylinkH3"><span th:text="${flightNumberReturn}"></span></div>
                     <div class="left-wrapper__return-date-variable return-date-first text-inter-grey-SkylinkH3"><span th:text="${returnDate}"></span></div>
@@ -164,10 +164,10 @@
 
                     <!-- Price summary -->
 
-                    <p class="text-inter-dark price-summary">Price summary</p>
+                    <p class="text-inter-dark price-summary">Ціна всього</p>
                     <div class="right-wrapper__traveler text-inter-dark-Skylink19">
                         <div class="right-wrapper__traveler-left-part">
-                            <p class="right-wrapper__traveler-text">Traveler:
+                            <p class="right-wrapper__traveler-text">Пасажир:
                             </p>
                             <div class="right-wrapper__treveler-number-veriable"></div>
                             <div class="right-wrapper__treveler-adult-veriable">
@@ -176,49 +176,49 @@
                         <div class="right-wrapper__treveler-price-variable"><span th:text="${total}"></span></div>
                     </div>
                     <div class="right-wrapper__flight text-inter-dark-Skylink19">
-                        <p class="right-wrapper__flight-text">Flight
+                        <p class="right-wrapper__flight-text">Рейс
                         </p>
                         <div class="right-wrapper__flight-price-variable"><span th:text="${cost}"></span></div>
                     </div>
                     <div class="right-wrapper__taxes text-inter-dark-Skylink19">
-                        <p class="right-wrapper__taxes-text">Taxes and fees</p>
+                        <p class="right-wrapper__taxes-text">Податки та збори</p>
                         <div class="right-wrapper__taxes-price-variable"><span th:text="${taxes}"></span></div>
                     </div>
 
                     <!-- Check-in baggage -->
 
                     <div class="right-wrapper__baggage text-inter-dark-Skylink19w500">
-                        <p>Check-in baggage</p>
+                        <p>Зареєстрований багаж</p>
                     </div>
                     <div class="right-wrapper__departure text-inter-dark-Skylink19">
-                        <p>Departure</p>
+                        <p>Виліт</p>
                         <div class="right-wrapper__departure-bags">
                             <div class="right-wrapper__departure-bags-variable"></div>
-                            <p>x bags</p>
+                            <p>x одиниця</p>
                         </div>
                     </div>
                     <div class="right-wrapper__return text-inter-dark-Skylink19">
-                        <p>Return</p>
+                        <p>Повернення</p>
                         <div class="right-wrapper__return-bags">
                             <div class="right-wrapper__return-bags-variable"></div>
-                            <p>x bags</p>
+                            <p>x одиниця</p>
                         </div>
                     </div>
 
                     <!-- Add ones -->
 
                     <div class="right-wrapper__add text-inter-dark-Skylink19w500">
-                        <p>Add ones</p>
+                        <p>Додатково</p>
                     </div>
                     <div class="right-wrapper__choice text-inter-dark-Skylink19">
-                        <p class="right-wrapper__choice-text">Total seat choice</p>
+                        <p class="right-wrapper__choice-text">Додаткові обрані речі на місце</p>
                         <div class="right-wrapper__choice-price-variable"></div>
                     </div>
 
                     <!-- Flight total -->
 
                     <div class="right-wrapper__total text-inter-dark">
-                        <p class="right-wrapper__total-text">Flight total</p>
+                        <p class="right-wrapper__total-text">Переліт всього</p>
                         <div class="right-wrapper__total-price-variable"><span th:text="${flightTotal}"></span></div>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
         <div class="midle-wrapper">
             <div class="midle-wrapper__table">
                 <div class="midle-wrapper__passenger">
-                    <p class="text-montserrat-dark-SkylinkH2 choose-seats-text">Passenger 1</p>
+                    <p class="text-montserrat-dark-SkylinkH2 choose-seats-text">Пасажир 1</p>
                 </div>
 
                 <!-- Рядок з формами по пасажиру -->
@@ -257,10 +257,10 @@
 
                         <div class="midle-wrapper__gender-container">
                             <select class="midle-wrapper__gender-select passenger-small-button" name="gender" id="gender">
-                                <option value="" disabled selected>Gender</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
+                                <option value="" disabled selected>Стать</option>
+                                <option value="male">Чоловіча</option>
+                                <option value="female">Жіноча</option>
+                                <option value="other">Інша</option>
                             </select>
                         </div>
                     </form>
@@ -268,26 +268,26 @@
                     <!-- Date of birth -->
 
                     <div class="midle-wrapper__birth">
-                        <p class="text-inter-grey-Skylink">Date of birth</p>
+                        <p class="text-inter-grey-Skylink">Дата народження</p>
                     </div>
                     <div class="midle-wrapper__select-birth">
                             <select class="midle-wrapper__month-select passenger-small-button" name="month" id="month">
-                            <option value="" disabled selected>Month</option>
-                            <option value="january">January</option>
-                            <option value="february">February</option>
-                            <option value="march">March</option>
-                            <option value="april">April</option>
-                            <option value="may">May</option>
-                            <option value="june">June</option>
-                            <option value="july">July</option>
-                            <option value="august">August</option>
-                            <option value="september">September</option>
-                            <option value="october">October</option>
-                            <option value="november">November</option>
-                            <option value="december">December</option>
+                            <option value="" disabled selected>Місяць</option>
+                            <option value="january">Січень</option>
+                            <option value="february">Лютий</option>
+                            <option value="march">Березень</option>
+                            <option value="april">Квітень</option>
+                            <option value="may">Травень</option>
+                            <option value="june">Червень</option>
+                            <option value="july">Липень</option>
+                            <option value="august">Серпень</option>
+                            <option value="september">Вересень</option>
+                            <option value="october">Жовтень</option>
+                            <option value="november">Листопад</option>
+                            <option value="december">Грудень</option>
                         </select>
                             <select class="midle-wrapper__day-select passenger-small-button" name="day" id="day">
-                            <option value="" disabled selected>Day</option>
+                            <option value="" disabled selected>День</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -321,7 +321,7 @@
                             <option value="31">31</option>
                         </select>
                             <select class="midle-wrapper__year-select passenger-small-button" name="year" id="year">
-                            <option value="" disabled selected>Year</option>
+                            <option value="" disabled selected>Рік</option>
                             <option value="2024">2024</option>
                             <option value="2023">2023</option>
                             <option value="2022">2022</option>
@@ -363,7 +363,7 @@
 
                         <div class="middle-wrapper__button">
                             <button class="middle-wrapper__change-button left-wrapper__button_blue">
-                                Add another passenger
+                                Додати іншого пасажира
                             </button>
                         </div>
                     </div>
@@ -379,7 +379,7 @@
         <div class="lower-wrapper">
 
             <div class="lower-wrapper__left-table">
-                <p class="text-montserrat-dark-SkylinkH2 choose-seats-text">Choose your seats</p>
+                <p class="text-montserrat-dark-SkylinkH2 choose-seats-text">Оберіть своє місце</p>
 
                 <!-- Рядок напрямку вильоту та зворотнього рейсу-->
 
@@ -401,7 +401,7 @@
                 <div class="passenger1-row">
                     <div class="passenger1-box">
                         <button class="passenger1-box__button">
-                            Passenger 1
+                            Пасажир 1
                         </button>
                     </div>
 
@@ -418,19 +418,19 @@
                         <div class="available box1D">
                             <p>1D</p>
                         </div>
-                        <p>Available</p>
+                        <p>Вільне</p>
                     </div>
                     <div class="color-description__row description-row2">
                         <div class="non-available box1D">
                             <p>1D</p>
                         </div>
-                        <p>Not available</p>
+                        <p>Зайняте</p>
                     </div>
                     <div class="color-description__row description-row3">
                         <div class="selected box1D">
                             <p>1D</p>
                         </div>
-                        <p>Selected</p>
+                        <p>Обране</p>
                     </div>
                 </div>
             </div>
@@ -548,19 +548,19 @@
         <div class="payment-wrapper">
             <div class="payment-table">
                 <div class="payment-method">
-                    <p class="text-montserrat-dark-SkylinkH2">Payment method</p>
+                    <p class="text-montserrat-dark-SkylinkH2">Спосіб оплати</p>
                 </div>
                 <div class="select-method">
-                    <p class="text-inter-dark">Select a payment method</p>
+                    <p class="text-inter-dark">Оберіть спосіб оплати</p>
                 </div>
                 <div class="payment-options">
-                    <button class="payment-button credit-card"><i class="fa-regular fa-credit-card"></i>Credit card</button>
+                    <button class="payment-button credit-card"><i class="fa-regular fa-credit-card"></i>Кредитна картка</button>
                     <button class="payment-button google-pay"><i class="fa-brands fa-google"></i>Google Pay</button>
                     <button class="payment-button apple-pay"><i class="fa-brands fa-apple"></i>Apple Pay</button>
                     <button class="payment-button paypal"><i class="fa-brands fa-paypal"></i>Paypal</button>
                 </div>
                 <div class="details-line">
-                    <p class="text-inter-dark">Credit card details</p>
+                    <p class="text-inter-dark">Дані кредитної картки</p>
                 </div>
 
                 <div class="details-payment-form">
@@ -591,7 +591,7 @@
     <!-- Форма для збирання даних з усіх полів для передачі через один клік -->
     <div class="container continue-button">
             <button class="separate-button text-inter-grey-Skylink">
-                Confirm and pay
+                Підтвердити та оплатити
             </button>
     </div>
 </div>
@@ -607,26 +607,26 @@
             <div class="footer-wrapper__1column">
                 <a href="#"><img src="/img/Logo.png" alt="logo"></a>
                 <div class="contacts text-inter-grey-Skylink">
-                    <p>123 Maple Avenue, Suite</p>
-                    <p>400, San Francisco, CA</p>
+                    <p>123 Мепл Авеню, Світ</p>
+                    <p>400, м. Сан-Франціско, CA</p>
                     <div class="mail">
                         <a class="text-inter-grey-Skylink mail" href="mailto:sklink@gmail.com">sklink@gmail.com</a>
                     </div>
                 </div>
-                <a class="legal-doc text-inter-grey-Skylink" href="#">Legal documents</a>
+                <a class="legal-doc text-inter-grey-Skylink" href="#">Юридичні документи</a>
             </div>
 
             <!-- 2 Стовпчик -->
 
             <div class="footer-wrapper__2column">
                 <div class="policy">
-                    <a class="text-inter-dark-Skylink19" href="#">Shipping Policy</a>
-                    <a class="text-inter-dark-Skylink19" href="#">Support</a>
+                    <a class="text-inter-dark-Skylink19" href="#">Політика доставки</a>
+                    <a class="text-inter-dark-Skylink19" href="#">Підтримка</a>
                     <a class="text-inter-dark-Skylink19" href="#">FAQs</a>
-                    <a class="text-inter-dark-Skylink19" href="#">Warranty Terms</a>
+                    <a class="text-inter-dark-Skylink19" href="#">Гарантійні зобов'язання</a>
                 </div>
                 <div class="privacy text-inter-grey-Skylink">
-                    <a class="text-inter-grey-Skylink" href="">Privacy Policy</a>
+                    <a class="text-inter-grey-Skylink" href="">Політика конфіденційності</a>
                 </div>
             </div>
 
@@ -634,13 +634,13 @@
 
             <div class="footer-wrapper__3column">
                 <div class="terms">
-                    <a class="text-inter-dark-Skylink19" href="#">Return Policy</a>
-                    <a class="text-inter-dark-Skylink19" href="#">Terms and Conditions of Sale</a>
-                    <a class="text-inter-dark-Skylink19" href="#">Terms os Use</a>
-                    <a class="text-inter-dark-Skylink19" href="#">Contact us</a>
+                    <a class="text-inter-dark-Skylink19" href="#">Політика повернення</a>
+                    <a class="text-inter-dark-Skylink19" href="#">Умови продажу</a>
+                    <a class="text-inter-dark-Skylink19" href="#">Умови використання</a>
+                    <a class="text-inter-dark-Skylink19" href="#">Контакти</a>
                 </div>
                 <div class="notification text-inter-grey-Skylink">
-                    <a class="text-inter-grey-Skylink" href="">Push Notification Policy</a>
+                    <a class="text-inter-grey-Skylink" href="">Політика Push-повідомлень</a>
                 </div>
             </div>
 
