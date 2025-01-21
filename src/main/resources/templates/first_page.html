@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Tickets Online - Get Your Tickets Now</title>
+    <meta name="description" content="Booking tickets">
+    <meta name="keywords" content="booking, tickets, online, travel, flights">
+    <meta name="robots" content="index, follow">
+    <!--Сторінку можна індексувати та слідувати за всіма посиланнями на ній  -->
+    <!-- <link rel="stylesheet" href="/css/second_page_style.css"> -->
+    <link rel="stylesheet" href="/css/first_page.css">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+
+    <!-- <script src="https://kit.fontawesome.com/593c193946.js" crossorigin="anonymous"></script> -->
+
+</head>
+
+<body>
+    <!-- =============================== HEADER ================================ -->
+
+        <header class="header">
+            <div class="logo">
+                <a href="#"><img class="main-section__logo" src="/img/Logo.png" alt=""></a>
+                <a href="#"><img class="main-section__logo_small" src="/img/Logo_small.png" alt=""></a>
+
+            </div>
+
+            <div class="nav_menu">
+                <button class="nav-menu__toggle"><img src="/img/Menu.svg" alt="menu icon"></button>
+                <ul class="nav-menu__list ">
+                    <li class="nav-menu__list-item ">
+                        <a href="#"><img class="main-section__support" src="/img/Support.svg" alt=""></a>
+                        <a href="#" class="nav-menu__link text-inter400s16-black">Підтримка</a>
+                    </li>
+                    <li class="nav-menu__list-item">
+                        <a href="#"><img class="main-section__favorites" src="/img/Favourite.svg" alt=""></a>
+                        <a href="favorites.html" class="nav-menu__link text-inter400s16-black">Обране</a>
+                    </li>
+                    <li class="nav-menu__list-item">
+                        <a href="#"><img class="main-section__flights" src="/img/Mytrips.svg" alt=""></a>
+                        <a href="my-flights.html" class="nav-menu__link text-inter400s16-black">Мої рейси</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="header-icons">
+                <a href="#"><img src="/img/Heart.svg" alt=""></a>
+                <a href="#"><img src="/img/iconMap.svg" alt=""></a>
+                <a href="#"><img src="/img/Ellipse 1.svg" alt=""></a>
+            </div>
+    </header>
+
+
+    <!-- =================================== MAIN CONTENT ================================= -->
+    <div class="main_content">
+        <div class="searching_block">
+            <div class="main_text">
+                <h1>Заплануйте свою наступну мандрівку: вигідні авіарейси до ваших омріяних напрямків!</h1>
+            </div>
+            <div class="search_form">
+
+                <div class="search_form_top">
+                    <div class="left_part">
+                        <img src="img/Auto Layout Horizontal (2).png" class="flights_button">
+                        <img src="img/Auto Layout Horizontal (1).png" class="hotels_button">
+                    </div>
+                    <div class="left_part_small">
+                        <img src="img/Auto Layout Horizontal (3).png" class="flights_button">
+                        <img src="img/Auto Layout Horizontal (4).png" class="hotels_button">
+                    </div>
+                    
+                    <div class="right_part">
+                        <input type="checkbox" name="search_everywhere" value="Search">
+                        <label> Шукати всюди</label><br>
+                    </div>
+                </div>
+
+                <div class="search_form_bottom">
+                    <form action="/flight" method="post">
+                        <div class="search_row">
+                            <div class="search_fields">
+                                <div class="cities">
+                                    <div class="from_city">
+                                        <input list="fromCity" name="fromCity" placeholder="Звідки?">
+                                        <datalist id="fromCity">
+                                            <option value="Київ">
+                                            <option value="Рим">
+                                            <option value="Лісабон">
+                                            <option value="Нью-Йорк">
+                                        </datalist>
+                                    </div>
+                                    <div class="city_to">
+                                        <input list="destinationCity" name="destinationCity" placeholder="Куди?">
+                                        <datalist id="destinationCity">
+                                            <option value="Київ">
+                                            <option value="Рим">
+                                            <option value="Лісабон">
+                                            <option value="Нью-Йорк">
+                                        </datalist>
+                                    </div>
+                                </div>
+
+                                <div class="dates">
+                                    <div class="depart_date">
+                                        <label>Відправлення</label>
+                                        <input type="date" id="datemin" name="departDate">
+                                    </div>
+                                    <div class="return_date">
+                                        <label>Повернення</label>
+                                        <input type="date" id="nextdatemin" name="returnDate">
+                                    </div>
+                                    <!-- <div class="1_adult">
+                                        <input placeholder="1 adult, economy">
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <div class="search_button">
+                                <button type="submit" >Пошук</button>
+                            </div>
+                        </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="advantages">
+            <div>
+                <h2>Наші переваги</h2>
+            </div>
+            <div class="items">
+                <div class="left_adv">
+                    <img src="img/Earth.png">
+                    <p>Широкий вибір напрямків</p>
+                </div>
+                <div class="central_adv">
+                    <img src="img/Thumb.png">
+                    <p>Висока якість сервісів</p>
+                </div>
+                <div class="right_adv">
+                    <img src="img/100.png">
+                    <p>Надійність і безпека</p>
+                </div>
+            </div>
+            <div class="advantages_text">
+                <h2>Переваги замовлення авіаквитків у нашій компанії</h2>
+                <p>
+                    Замовляючи авіаквитки у нас, ви отримуєте зручність, вигідні пропозиції та повну прозорість. Ми пропонуємо широкий вибір рейсів від провідних авіакомпаній світу, дозволяючи порівнювати ціни та обирати найкращий варіант для вашої подорожі. Інтуїтивно зрозумілий пошук із фільтрами за напрямком, датою та бюджетом допоможе знайти квитки лише за кілька хвилин. Окрім того, наша платформа забезпечує швидке бронювання та безпечну оплату, що робить процес покупки авіаквитків максимально простим і комфортним.
+                </p>
+                <h2>Високий рівень сервісу</h2>
+                <p>
+                    Ми прагнемо забезпечити кожному клієнту першокласний сервіс. Наша підтримка працює цілодобово, щоб допомогти з будь-якими питаннями чи проблемами під час бронювання. Користувачі можуть розраховувати на надійну інформацію про рейси, своєчасні сповіщення та персоналізований підхід. Ми цінуємо довіру наших клієнтів, тому постійно вдосконалюємо функціонал сайту та пропонуємо додаткові послуги, щоб кожна подорож із нами була комфортною та безтурботною.
+                </p>
+            </div>
+        </div>
+
+        <div class="popular_destinations_block">
+            <div class="popular_destinations_row">
+                <h3>Популярні напрямки</h3>
+                <a href="" class="all_destinations_link">Всі напрямки</a>
+            </div>
+
+            <div class="popular_destinations" id="popular_dest_large">
+                <div class="turkey_container">
+                    <img src="/img/unsplash_bs1Nu9x7bNc.png">
+                    <a href="https://www.youtube.com/watch?v=FinR8vp0mDA" class="link_turkey">Туреччина &rarr;</a>
+                </div>
+                <div class="cyprus_portugal_italy_container">
+                    <div class="cyprus_portugal_container">
+                        <div class="cyprus_container">
+                            <img src="/img/unsplash_oUi2tvBLInY.png">
+                            <a href="https://www.youtube.com/watch?v=5KrGTjX9l1o" class="link_cyprus">Кіпр &rarr;</a>
+                        </div>
+                        <div class="portugal_container">
+                            <img src="/img/unsplash_K3XGEoZgA0s.png">
+                            <a href="https://www.youtube.com/watch?v=mR9kwUC89XU" class="link_portugal">Португалія &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="italy_container">
+                        <img src="/img/unsplash_uNvgvo2cs7k.png">
+                        <a href="https://www.youtube.com/watch?v=qO9j5u8UYbM" class="link_italy">Італія &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popular_destinations_medium" id="popular_dest_medium">
+
+                <div class="turkey_container_medium">
+                    <img src="/img/Turkey.png">
+                    <a href="https://www.youtube.com/watch?v=FinR8vp0mDA" class="link_turkey_medium">Туреччина &rarr;</a>
+                </div>
+                <div class="cyprus_container_medium">
+                    <img src="/img/Cyprus.png">
+                    <a href="https://www.youtube.com/watch?v=5KrGTjX9l1o" class="link_cyprus_medium">Кіпр &rarr;</a>
+                </div>
+                <div class="portugal_container_medium">
+                    <img src="/img/Portugal.png">
+                    <a href="https://www.youtube.com/watch?v=mR9kwUC89XU" class="link_portugal_medium">Португалія &rarr;</a>
+                </div>
+                <div class="italy_container_medium">
+                    <img src="/img/Italy.png">
+                    <a href="https://www.youtube.com/watch?v=qO9j5u8UYbM" class="link_italy_medium">Італія &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="map_container">
+            <h3>Ціни та напрямки</h3>
+            <div class="map">
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20027068.64481609!2d15.01973885868234!3d46.98577478374374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDRl9C90LA!5e0!3m2!1suk!2sua!4v1737280388610!5m2!1suk!2sua"
+                width='100%' height="450" style="border:0; border-radius:54px;" allowfullscreen="" loading="lazy"
+                
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            </div>
+            
+            <p>Плануйте свою поїздку зараз!</p>
+        </div>
+
+    </div>
+
+
+    <!-- ====================== FOOTER =============================================================== -->
+    <footer>
+        <div class="column_1">
+            <a href="#"><img src="/img/Logo.png" alt="logo"></a>
+            <div class="contacts text-inter-grey-Skylink">
+                <div>
+                    <p>123 Мепл Авеню, Світ</p>
+                </div>
+                <div>
+                    <p>400, м. Сан-Франциско, CA</p>
+                </div>
+                <div class="mail">
+                    <a class="text-inter-grey-Skylink mail" href="mailto:sklink@gmail.com">sklink@gmail.com</a>
+                </div>
+            </div>
+            <a class="legal-doc text-inter-grey-Skylink" href="#">Legal documents</a>
+        </div>
+
+        <div class="column_2">
+            <div class="policy">
+                <a class="text-inter-dark-Skylink19" href="#">Політика доставки</a>
+                <a class="text-inter-dark-Skylink19" href="#">Підтримка</a>
+                <a class="text-inter-dark-Skylink19" href="#">FAQs</a>
+                <a class="text-inter-dark-Skylink19" href="#">Гарантійні зобов'язання</a>
+            </div>
+            <div class="privacy text-inter-grey-Skylink">
+                <a class="text-inter-grey-Skylink" href="">Політика конфіденціності</a>
+            </div>
+        </div>
+
+        <div class="column_3">
+            <div class="terms">
+                <a class="text-inter-dark-Skylink19" href="#">Політика повернення</a>
+                <a class="text-inter-dark-Skylink19" href="#">Умови продажу</a>
+                <a class="text-inter-dark-Skylink19" href="#">Умови використання</a>
+                <a class="text-inter-dark-Skylink19" href="#">Контакти</a>
+            </div>
+            <div class="notification text-inter-grey-Skylink">
+                <a class="text-inter-grey-Skylink" href="">Політика Push-повідомлень</a>
+            </div>
+        </div>
+
+        <div class="column_4">
+            <div class="icons">
+                <div class="icons-row">
+                    <a href="#" target="" rel="referrer">
+                        <img src="/img/iMessage.svg" alt="Facebook Icon">
+                    </a>
+                    <a href="#" target="" rel="referrer">
+                        <img src="/img/YouTube.svg" alt="YouTube Icon">
+                    </a>
+                    <a href="#" target="" rel="referrer">
+                        <img src="/img/Vector.svg" alt="Telegram Icon">
+                    </a>
+                </div>
+
+            </div>
+            <div class="LLC text-inter-grey-Skylink">
+                <p>© LLC «Skylink»</p>
+            </div>
+        </div>
+    </footer>
+        
+    
+    <!-- ======================== SCRIPT =============================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dateInput = document.getElementById('datemin');
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            const minDate = `${year}-${month}-${day}`;
+            dateInput.min = minDate;
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const dateInput = document.getElementById('nextdatemin');
+            const today = new Date();
+            today.setDate(today.getDate() + 1); // Додаємо 1 день до поточної дати для отримання завтрашньої
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate() + 1).padStart(2, '0');
+            const minDate = `${year}-${month}-${day}`;
+            dateInput.min = minDate;
+        });
+    </script>
+
+</body>
+
+</html>
