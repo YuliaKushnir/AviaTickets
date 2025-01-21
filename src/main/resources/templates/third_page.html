@@ -28,13 +28,13 @@
       <ul class="nav-menu__list ">
         <li class="nav-menu__list-item ">
           <a href="#"><img class="main-section__support" src="/img/Support.svg" alt=""></a>
-          <a href="#" class="nav-menu__link text-inter400s16-black">Support</a></li>
+          <a href="#" class="nav-menu__link text-inter400s16-black">Підтримка</a></li>
         <li class="nav-menu__list-item">
           <a href="#"><img class="main-section__favorites" src="/img/Favourite.svg" alt=""></a>
-          <a href="favorites.html" class="nav-menu__link text-inter400s16-black">Favorites</a></li>
+          <a href="favorites.html" class="nav-menu__link text-inter400s16-black">Обране</a></li>
         <li class="nav-menu__list-item">
           <a href="#"><img class="main-section__flights" src="/img/Mytrips.svg" alt=""></a>
-          <a href="my-flights.html" class="nav-menu__link text-inter400s16-black">My flights</a></li>
+          <a href="my-flights.html" class="nav-menu__link text-inter400s16-black">Мої рейси</a></li>
       </ul>
     </nav>
 
@@ -51,7 +51,7 @@
   <div class="container first-section__content-container">
     <div class="first-wrapper">
       <div class="first-wrapper__first-line text-inter-dark">
-        <p>Your flight has been booked successfully! Your confirmation number is <span th:text="${confirmationNumber}"></span></p>
+        <p>Ваш політ успішно заброньовано! Номер вашого підтвердження - <span th:text="${confirmationNumber}"></span></p>
       </div>
       <div class="first-wrapper__second-line">
         <p>Bon voyage, </p>
@@ -59,13 +59,13 @@
         <p>!</p>
       </div>
       <div class="first-wrapper__third-line">
-        <p>Confirmation number: <span th:text="${confirmationNumber}"></span></p>
+        <p>Номер підтвердження: <span th:text="${confirmationNumber}"></span></p>
       </div>
       <div class="first-wrapper__forth-line">
-        <p>Thank you for booking your travel with Skylink! Below is a summary of your trip. We’ve sent a copy of your booking confirmation to your email address. </p>
+        <p>Дякуємо, що обрали Skylink для вашої подорожі! Нижче ви знайдете короткий опис вашої поїздки. Копія підтвердження бронювання вже надіслана на вашу електронну адресу. </p>
       </div>
       <div class="first-wrapper__flight-summary">
-        <p>Flight summary</p>
+        <p>Огляд рейсу</p>
       </div>
     </div>
   </div>
@@ -82,7 +82,7 @@
         <div class="left-wrapper__destination">
           <div class="left-wrapper__destination-subframe">
             <div class="left-wrapper__destination-subframe_text">
-              <p>Your trip to <span th:text="${destinationCity}"></span></p>
+              <p>Ваша подорож до міста: <span th:text="${destinationCity}"></span></p>
             </div>
             <div class="left-wrapper__destination-subframe_dep-city-var"></div>
             <div class="left-wrapper__destination-subframe_after-city-text"><p>-</p></div>
@@ -98,7 +98,7 @@
 
         <div class="left-wrapper__departure-line">
           <div class="left-wrapper__departure-text text-inter-dark">
-            <p>Departure</p>
+            <p>Виліт</p>
           </div>
           <div class="left-wrapper__departure-flight-veriable text-inter-grey-SkylinkH3"><span th:text="${departFlightNumber}"></span></div>
           <div class="left-wrapper__departure-date-variable first-date text-inter-grey-SkylinkH3"><span th:text="${departDate}"></span></div>
@@ -139,7 +139,7 @@
 
         <div class="left-wrapper__return-line">
           <div class="left-wrapper__return-text text-inter-dark">
-            <p>Return</p>
+            <p>Повернення</p>
           </div>
           <div class="left-wrapper__return-flight-veriable text-inter-grey-SkylinkH3"><span th:text="${flightNumberReturn}"></span></div>
           <div class="left-wrapper__return-date-variable return-date-first text-inter-grey-SkylinkH3"><span th:text="${returnDate}"></span></div>
@@ -186,10 +186,10 @@
 
           <!-- Price summary -->
 
-          <p class="text-inter-dark price-summary">Price summary</p>
+          <p class="text-inter-dark price-summary">Загальна вартість</p>
           <div class="right-wrapper__traveler text-inter-dark-Skylink19">
             <div class="right-wrapper__traveler-left-part">
-              <p class="right-wrapper__traveler-text">Traveler:
+              <p class="right-wrapper__traveler-text">Пасажир:
               </p>
               <div class="right-wrapper__treveler-number-veriable"></div>
               <div class="right-wrapper__treveler-adult-veriable">
@@ -198,49 +198,49 @@
             <div class="right-wrapper__treveler-price-variable"><span th:text="${total}"></span></div>
           </div>
           <div class="right-wrapper__flight text-inter-dark-Skylink19">
-            <p class="right-wrapper__flight-text">Flight
+            <p class="right-wrapper__flight-text">Рейс
             </p>
             <div class="right-wrapper__flight-price-variable"><span th:text="${cost}"></span></div>
           </div>
           <div class="right-wrapper__taxes text-inter-dark-Skylink19">
-            <p class="right-wrapper__taxes-text">Taxes and fees</p>
+            <p class="right-wrapper__taxes-text">Податки та збори</p>
             <div class="right-wrapper__taxes-price-variable"><span th:text="${taxes}"></span></div>
           </div>
 
           <!-- Check-in baggage -->
 
           <div class="right-wrapper__baggage text-inter-dark-Skylink19w500">
-            <p>Check-in baggage</p>
+            <p>Зареєстрований багаж</p>
           </div>
           <div class="right-wrapper__departure text-inter-dark-Skylink19">
-            <p>Departure</p>
+            <p>Виліт</p>
             <div class="right-wrapper__departure-bags">
               <div class="right-wrapper__departure-bags-variable"></div>
-              <p>x bags</p>
+              <p>x од.</p>
             </div>
           </div>
           <div class="right-wrapper__return text-inter-dark-Skylink19">
-            <p>Return</p>
+            <p>Повернення</p>
             <div class="right-wrapper__return-bags">
               <div class="right-wrapper__return-bags-variable"></div>
-              <p>x bags</p>
+              <p>x од.</p>
             </div>
           </div>
 
           <!-- Add ones -->
 
           <div class="right-wrapper__add text-inter-dark-Skylink19w500">
-            <p>Add ones</p>
+            <p>Додатково</p>
           </div>
           <div class="right-wrapper__choice text-inter-dark-Skylink19">
-            <p class="right-wrapper__choice-text">Total seat choice</p>
+            <p class="right-wrapper__choice-text">Додатковий багаж</p>
             <div class="right-wrapper__choice-price-variable"></div>
           </div>
 
           <!-- Flight total -->
 
           <div class="right-wrapper__total text-inter-dark">
-            <p class="right-wrapper__total-text">Flight total</p>
+            <p class="right-wrapper__total-text">Переліт всього</p>
             <div class="right-wrapper__total-price-variable"><span th:text="${flightTotal}"></span></div>
           </div>
         </div>
@@ -260,8 +260,8 @@
         <div class="footer-wrapper__1column">
           <a href="#"><img src="/img/Logo.png" alt="logo"></a>
           <div class="contacts text-inter-grey-Skylink">
-            <p>123 Maple Avenue, Suite</p>
-            <p>400, San Francisco, CA</p>
+            <p>123 Мепл Авеню, Світ</p>
+            <p>400, м. Сан-Франциско, CA</p>
             <div class="mail">
               <a class="text-inter-grey-Skylink mail" href="mailto:sklink@gmail.com">sklink@gmail.com</a>
             </div>
@@ -273,13 +273,12 @@
 
         <div class="footer-wrapper__2column">
           <div class="policy">
-            <a class="text-inter-dark-Skylink19" href="#">Shipping Policy</a>
-            <a class="text-inter-dark-Skylink19" href="#">Support</a>
+            <a class="text-inter-dark-Skylink19" href="#">Політика доставки
             <a class="text-inter-dark-Skylink19" href="#">FAQs</a>
-            <a class="text-inter-dark-Skylink19" href="#">Warranty Terms</a>
+            <a class="text-inter-dark-Skylink19" href="#">Гарантійні зобов'язання</a>
           </div>
           <div class="privacy text-inter-grey-Skylink">
-            <a class="text-inter-grey-Skylink" href="">Privacy Policy</a>
+            <a class="text-inter-grey-Skylink" href="">Політика конфіденціності</a>
           </div>
         </div>
 
@@ -287,13 +286,13 @@
 
         <div class="footer-wrapper__3column">
           <div class="terms">
-            <a class="text-inter-dark-Skylink19" href="#">Return Policy</a>
-            <a class="text-inter-dark-Skylink19" href="#">Terms and Conditions of Sale</a>
-            <a class="text-inter-dark-Skylink19" href="#">Terms os Use</a>
-            <a class="text-inter-dark-Skylink19" href="#">Contact us</a>
+            <a class="text-inter-dark-Skylink19" href="#">Політика повернення</a>
+            <a class="text-inter-dark-Skylink19" href="#">Умови продажу</a>
+            <a class="text-inter-dark-Skylink19" href="#">Умови використання</a>
+            <a class="text-inter-dark-Skylink19" href="#">Контакти</a>
           </div>
           <div class="notification text-inter-grey-Skylink">
-            <a class="text-inter-grey-Skylink" href="">Push Notification Policy</a>
+            <a class="text-inter-grey-Skylink" href="">Політика Push-повідомлень</a>
           </div>
         </div>
 
@@ -438,7 +437,7 @@
     document.querySelector('.right-wrapper__treveler-number-veriable').textContent = trevelerNumberVeriable;
 
     // Оголошення змінної trevelerAdultVeriable
-    var trevelerAdultVeriable = "Adult";
+    var trevelerAdultVeriable = "дорослий";
     document.querySelector('.right-wrapper__treveler-adult-veriable').textContent = trevelerAdultVeriable;
 
     // Оголошення змінної trevelerPriceVeriable
