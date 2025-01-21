@@ -83,7 +83,7 @@
                             <div class="search_fields">
                                 <div class="cities">
                                     <div class="from_city">
-                                        <input list="fromCity" name="fromCity" placeholder="Звідки?">
+                                        <input list="fromCity" name="fromCity" placeholder="Звідки?" required>
                                         <datalist id="fromCity">
                                             <option value="Київ">
                                             <option value="Рим">
@@ -92,7 +92,7 @@
                                         </datalist>
                                     </div>
                                     <div class="city_to">
-                                        <input list="destinationCity" name="destinationCity" placeholder="Куди?">
+                                        <input list="destinationCity" name="destinationCity" placeholder="Куди?" required>
                                         <datalist id="destinationCity">
                                             <option value="Київ">
                                             <option value="Рим">
@@ -105,11 +105,11 @@
                                 <div class="dates">
                                     <div class="depart_date">
                                         <label>Відправлення</label>
-                                        <input type="date" id="datemin" name="departDate">
+                                        <input type="date" id="datemin" name="departDate" required>
                                     </div>
                                     <div class="return_date">
                                         <label>Повернення</label>
-                                        <input type="date" id="nextdatemin" name="returnDate">
+                                        <input type="date" id="nextdatemin" name="returnDate" required>
                                     </div>
                                     <!-- <div class="1_adult">
                                         <input placeholder="1 adult, economy">

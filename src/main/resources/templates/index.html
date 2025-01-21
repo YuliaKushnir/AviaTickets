@@ -66,9 +66,9 @@
                         <div class="left-wrapper__destination-subframe_destination-veriable">
                         </div>
                     </div>
-                    <button class="left-wrapper__button left-wrapper__button_blue">
+                    <a href="/" class="left-wrapper__button left-wrapper__button_blue">
                         Змінити рейс
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Рядок по вильоту: рейс та дата вильоту -->
@@ -240,15 +240,15 @@
                 <div class="midle-wrapper__name">
                     <form class="midle-wrapper__name-form">
                         <div class="midle-wrapper__form-group">
-                            <input class="midle-wrapper__name-input" type="text" name="firstName" placeholder="First name">
+                            <input class="midle-wrapper__name-input" type="text" name="firstName" placeholder="Ім'я" required>
                         </div>
 
                         <div class="midle-wrapper__form-group">
-                            <input class="midle-wrapper__name-input" type="text" name="middleName" placeholder="Middle name (optional)">
+                            <input class="midle-wrapper__name-input" type="text" name="middleName" placeholder="По-батькові" required>
                         </div>
 
                         <div class="midle-wrapper__form-group">
-                            <input class="midle-wrapper__name-input" type="text" name="lastName" placeholder="Last name">
+                            <input class="midle-wrapper__name-input" type="text" name="lastName" placeholder="Прізвище" required>
                         </div>
                     </form>
                     <form class="midle-wrapper__gender-form">
@@ -256,7 +256,7 @@
                         <!-- Gender -->
 
                         <div class="midle-wrapper__gender-container">
-                            <select class="midle-wrapper__gender-select passenger-small-button" name="gender" id="gender">
+                            <select class="midle-wrapper__gender-select passenger-small-button" name="gender" id="gender" required>
                                 <option value="" disabled selected>Стать</option>
                                 <option value="male">Чоловіча</option>
                                 <option value="female">Жіноча</option>
@@ -271,7 +271,7 @@
                         <p class="text-inter-grey-Skylink">Дата народження</p>
                     </div>
                     <div class="midle-wrapper__select-birth">
-                            <select class="midle-wrapper__month-select passenger-small-button" name="month" id="month">
+                            <select class="midle-wrapper__month-select passenger-small-button" name="month" id="month" required>
                             <option value="" disabled selected>Місяць</option>
                             <option value="january">Січень</option>
                             <option value="february">Лютий</option>
@@ -286,7 +286,7 @@
                             <option value="november">Листопад</option>
                             <option value="december">Грудень</option>
                         </select>
-                            <select class="midle-wrapper__day-select passenger-small-button" name="day" id="day">
+                            <select class="midle-wrapper__day-select passenger-small-button" name="day" id="day" required>
                             <option value="" disabled selected>День</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -320,7 +320,7 @@
                             <option value="30">30</option>
                             <option value="31">31</option>
                         </select>
-                            <select class="midle-wrapper__year-select passenger-small-button" name="year" id="year">
+                            <select class="midle-wrapper__year-select passenger-small-button" name="year" id="year" required>
                             <option value="" disabled selected>Рік</option>
                             <option value="2024">2024</option>
                             <option value="2023">2023</option>
@@ -565,19 +565,19 @@
 
                 <div class="details-payment-form">
                     <div class="details-form">
-                        <input type="text" id="name-on-card" placeholder="Name on card" />
+                        <input type="text" id="name-on-card" placeholder="Ім'я на карті" required />
                     </div>
                     <div class="details-form">
-                        <input type="text" id="card-number" placeholder="Card number" />
+                        <input type="text" id="card-number" placeholder="Номер карти" required />
                     </div>
                     <div class="details-form-row">
                         <div class="expiration-line">
-                            <input type="text" id="expiration-date" placeholder="Expiration date" />
+                            <input type="text" id="expiration-date" placeholder="Термін дії" required />
                             <span class="expiration-format">MM/YY</span>
                         </div>
                         <div class="cvv-line">
                             <div class="cvv-input">
-                                <input type="text" id="cvv" placeholder="CVV" />
+                                <input type="text" id="cvv" placeholder="CVV" required />
                                 <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
                             </div>
                         </div>
@@ -818,7 +818,7 @@
             if (response.ok) {
                 window.location.href = '/confirmation';
             } else {
-                alert('Заповніть всі поля!');
+                alert('Оберіть місце!');
             }
         });
     });
