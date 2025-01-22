@@ -106,24 +106,31 @@ html {
         }
 
         .nav-menu__list-item {
-
+            width: 28%;
             display: flex;
             margin-right: 8px;
             font-size: 16px;
             border: 1px solid #9099A3;
             border-radius: 80px;
-            padding: 9px 20px 9px 16px;
+            padding: 6px 15px 6px 12px;
 
-            .nav-menu__link{
-                margin-top:1rem;
-            }
-
-            .main-section__support,
+            .main-section__flights,
             .main-section__favorites,
-            .main-section__flights {
-                margin-top:0.1rem;
-
+            .main-section__support {
+                margin-left: 0px;
+                margin-right: 0px;
             }
+        }
+
+        .nav-menu__list-item:last-child {
+            margin-right: 0px;
+        }
+
+        .nav-menu__link {
+            margin-top: 2rem;
+            font-size: 16px;
+            font-weight: 500;
+            display: block;
         }
 
         .nav-menu__list-item:hover {
