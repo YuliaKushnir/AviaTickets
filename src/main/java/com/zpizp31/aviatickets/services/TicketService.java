@@ -18,7 +18,7 @@ public class TicketService {
     }
 
     public List<Ticket> addTickets(User user, Flight flightDeparture, Flight flightReturn, String seat){
-        Long confirmationNumber = new Random(100000000).nextLong();
+        Long confirmationNumber = new Random().nextLong();
 
         Ticket ticket1 = new Ticket();
         ticket1.setConfirmation_id(confirmationNumber);
